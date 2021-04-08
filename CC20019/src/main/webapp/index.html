@@ -5,6 +5,29 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-        <h1>Hello World!</h1>
+
+        <h1 style="text-align: center; background: black; color: white;">Primer Parcial Programacio II</h1>
+
+        <form action="PedirNumero">
+            <fieldset>
+                <legend> Información personal </legend>
+                <p><label>Nombre: <input type="text" name="nombre"></label></p>
+                <p><label>Carnet: <input type="text" name="direccion"></label></p>
+            </fieldset>
+
+            <fieldset>
+                <legend> Escribir dos numeros </legend>
+                <p><label>Numero 1: <input type="number" name="numero1"></label></p>
+                <p><label>Numero 2: <input type="number" name="numero2"></label></p>
+            </fieldset>
+            
+            <fieldset>
+                 <legend> Que desea hacer </legend>
+                <input type="submit" value="Sumarlos" name="suma">
+                <input type="submit" value="Restarlos" name="resta">
+                <input type="submit" value="Multiplicarlos" name="multiplicacion">
+                <input type="submit" value="Dividirlos" name="divicion">              
+            </fieldset>
+        </form>
     </body>
 </html>
