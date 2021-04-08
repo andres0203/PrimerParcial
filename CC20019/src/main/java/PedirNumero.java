@@ -51,8 +51,8 @@ public class PedirNumero extends HttpServlet {
 
             sesion.setAttribute("nombre", nombre);
             sesion.setAttribute("carnet", carnet);
-            sesion.setAttribute("numero1", Integer.parseInt(numero1));
-            sesion.setAttribute("numero2", Integer.parseInt(numero2));
+            sesion.setAttribute("numero1", numero1);
+            sesion.setAttribute("numero2", numero2);
 
             int SumaNum = 0;
             if (suma != null) {
