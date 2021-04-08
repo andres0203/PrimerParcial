@@ -19,7 +19,7 @@
                     <span class="boton boton--3"></span>
                 </div>
                 <div class="input-group">
-                    <input type="text" name="nombre" id="nombre" class="input-nombre" placeholder="Tu nombre" autocomplete="off">
+                    <input type="text" name="nombre" id="nombre" class="input-nombre" placeholder="Tu nombre">
                     <label for="nombre" class="label-nombre">Tu nombre</label>
                 </div>
                 <div class="input-group">
