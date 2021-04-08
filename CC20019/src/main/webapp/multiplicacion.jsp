@@ -13,5 +13,6 @@
     </head>
     <body>
          <h1>Bienvenido <%out.println(session.getAttribute("nombre"));%></h1>
+         <h2>Suma</h2>   
     </body>
 </html>
