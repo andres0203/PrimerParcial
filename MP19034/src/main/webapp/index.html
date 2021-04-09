@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Calculador Ues</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+
+        <form action="nuevo" method="POST">
+            <div class="contenedor">
+                <h1>Bienvenid@s A Calculadora Ues</h1>
+                <div class="menu">
+                    <div class="texto">
+                        <label for="fname">Ususario:</label>
+                        <input type="text" name="usuario" value="" required autocomplete="off">
+                    </div>
+                    <div class="texto">
+                        <label for="fname">Numero 1:</label>
+                        <input type="text" name="numero1" value="" required autocomplete="off"/>
+                    </div>
+                    <div class="texto">
+                        <label for="fname">Numero 2:</label>
+                        <input type="text" name="numero2" value="" required autocomplete="off"/>
+                    </div>
+                </div>
+
+
+                Porfavor seleciones las operaciones que solicita.
+                <br>
+
+                <input type="checkbox" name="suma" value="sumar" />Suma<br>
+
+
+                <input type="checkbox" name="resta" value="restar" />Resta<br>
+
+                <input type="checkbox" name="mult" value="multiplicar" />Multiplicacion<br>
+
+                <input type="checkbox" name="div" value="dividir" />Division<br>
+            
+            <br>
+            <input type="submit" value="Calcular" />
+            </div>
+
+        
+
+    </form>
+</body>
+</html>
+
