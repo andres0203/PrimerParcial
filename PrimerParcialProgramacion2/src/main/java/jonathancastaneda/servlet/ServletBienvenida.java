@@ -34,6 +34,18 @@ public class ServletBienvenida extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Bienvenido " + request.getParameter("nombre") + "</h1>");
+            out.println("<p>Elige la operacion aritmetica a realizar con los números "+ request.getParameter("numero1") +" y "+request.getParameter("numero2")+".</p>\n" +
+"        <div>\n" +
+"            <form action=\"ServletOperacionArtmetica\" method=\"post\">\n" +
+"                <select name=\"opcion\">\n" +
+"                    <option value=\"1\">Suma</option> \n" +
+"                    <option value=\"2\">Resta</option>\n" +
+"                    <option value=\"3\">Multiplicación</option>\n" +
+"                    <option value=\"4\">División</option>\n" +
+"                </select>\n" +
+"                <input type=\"submit\" value=\"Enviar opcion\">\n" +
+"            </form>\n" +
+"        </div>");
             out.println("</body>");
             out.println("</html>");
         }
