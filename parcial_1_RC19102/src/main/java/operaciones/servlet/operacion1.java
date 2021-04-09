@@ -46,6 +46,7 @@ public class operacion1 extends HttpServlet {
             String numero2 = request.getParameter("numeros2");
             String suma = request.getParameter("Sumar");
             String resta = request.getParameter("Restar");
+            String multi = request.getParameter("Multiplicar");
             int resultado = 0;
             if (suma != null) {
                 resultado = Integer.parseInt(numero1) + Integer.parseInt(numero2);
@@ -71,7 +72,7 @@ public class operacion1 extends HttpServlet {
                 out.println("los numeros negativos no tienen primos ");
             }
 
-            } else {
+            } else if(resta != null) {
                 resultado = Integer.parseInt(numero1) - Integer.parseInt(numero2);
                 out.println(nombreS+"El resultado de la resta es " + resultado);
                int contador=0;
@@ -91,7 +92,29 @@ public class operacion1 extends HttpServlet {
                     }
                     contador=0;
                 }
+            }else{
+                resultado = Integer.parseInt(numero1) * Integer.parseInt(numero2);
+                out.println(nombreS+"El resultado de la multiplicacion es " + resultado);
+               int contador=0;
+                out.println("<div></div>");
+                out.println("Los numeros primos que estan en ese rango son: ");
+                out.println("<div></div>");
+                for (int i1 = resultado; i1 >= 2; i1--) {
+                    out.println("<div></div>");
+                    for (int i2 = i1; i2 >= 1; i2--) {
+                        if ((i1%i2)==0) {
+                            contador=contador+1;
+                            
+                        }
+                    }
+                    if (contador==2) {
+                        out.print(i1);
+                    }
+                    contador=0;
+                }
+                
             }
+                
             if (resultado<0) {
                 out.println("los numeros negativos no tienen primos ");
             }

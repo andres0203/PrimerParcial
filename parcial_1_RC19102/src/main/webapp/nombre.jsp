@@ -16,7 +16,7 @@
             <input type="number" name="numeros2" id="numeros2"> 
             <input type="submit" name="Sumar" value="Sumar">
             <input type="submit" name="Restar" value="Restar">
-
+            <input type="submit" name="Multiplicar" value="Multiplicar">
             <textarea name="nombreSE" style="visibility:hidden;"><%=nombreSE%> </textarea>
         </form>
     </body>
