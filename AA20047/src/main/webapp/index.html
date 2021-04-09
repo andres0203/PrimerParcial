@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Bienvenido!</h1>
+        <h2>Por favor elija dos numeros que desee operar</h2>
+        <div>
+            <form action="PrimerServlet" method="post">
+                <label> Nombre </label>
+                <input type="txt" name="Nombre" id="txtNombre" placeholder="Ingrese su nombre"> <br>
+                <label> Primer Numero </label> 
+                  <input type="txt" name="primerNumero" id="txtprimerNumero" placeholder="Ingrese el primer numero"> <br>
+                <label> Segundo Numero </label> 
+                <input type="txt" name="segundoNumero" id="txtsegundoNumero" placeholder="Ingrese el segundo numero"> <br>
+                <input type="submit" name="botonSuma" value="Sumar">
+                <input type="submit" name="botonResta" value="Restar"> <br>
+                <input type="submit" name="botonMultiplicacion" value="Multiplicar">
+                <input type="submit" name="botonDivision" value="Dividir">
+            </form>
+        </div>
+    </body>
+</html>
