@@ -30,7 +30,7 @@ public class solicitarDosnumeros extends HttpServlet {
      */
     String nombre, suma, resta, multiplicacion, divicion, verPrimos="";
     int numero1, numero2, Resultado, numeroMayor, numeroMenor, contador1, contador2;
-
+    //codigo
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
