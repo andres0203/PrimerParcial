@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Start Page</title>
+        <title>Datos</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Datos:</h1>
+        <div>
+            <form action="ServletBienvenida" method="post">
+                <label>Nombre: </label>
+                <input type="text" name="nombre" id="txtNombre" placeholder="Agregue su nombre"><br><br>
+                <label>Primer número: </label>
+                <input type="number" name="numero1" placeholder="Ingrese un número" ><br><br>
+                <label>Segundo Número: </label>
+                <input type="number" name="numero2" placeholder="Ingrese un número" ><br><br>
+                <input type="submit" value="Enviar datos">
+            </form>
+        </div>
     </body>
 </html>
