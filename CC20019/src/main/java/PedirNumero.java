@@ -32,7 +32,8 @@ public class PedirNumero extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
-            String numero1, numero2, nombre, carnet, suma, resta, multiplicacion, divicion;
+            String numero1, numero2, nombre, carnet, suma, resta, multiplicacion, divicion, primos = "";
+            int contador1, contador2, count = 0, numeroMayor, numeroMenor;
             HttpSession sesion = request.getSession();
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -54,20 +55,51 @@ public class PedirNumero extends HttpServlet {
             sesion.setAttribute("numero1", numero1);
             sesion.setAttribute("numero2", numero2);
 
-            int SumaNum = 0;
-            if (suma != null) {
-                response.sendRedirect("suma.jsp");
-                //SumaNum = (Integer.parseInt(numero1) + Integer.parseInt(numero2));
-            } else if (resta != null) {
-                response.sendRedirect("resta.jsp");
-                //SumaNum = (Integer.parseInt(numero1) - Integer.parseInt(numero2));
-            } else if (multiplicacion != null) {
-                response.sendRedirect("multiplicacion.jsp");
-            } else if (divicion != null) {
-                response.sendRedirect("divicion.jsp");
+            if (Integer.parseInt(numero1) >= Integer.parseInt(numero2)) {
+                numeroMayor = Integer.parseInt(numero1);
+                numeroMenor = Integer.parseInt(numero2);
+            } else {
+                numeroMayor = Integer.parseInt(numero2);
+                numeroMenor = Integer.parseInt(numero1);
             }
 
-            out.println("<h1>El resutado de la operacion es " + SumaNum + "</h1>");
+            for (contador1 = numeroMenor; contador1 < numeroMayor; contador1++) {
+                count = 0;
+                for (contador2 = 1; contador2 <= contador1; contador2++) {
+                    if ((contador1 % contador2) == 0) {
+                        count++;
+                    }
+                }
+                if (count == 2) {
+                    primos += contador1+", ";
+                }
+            }
+
+            int SumaNum = 0;
+            if (suma != null) {
+                SumaNum = (Integer.parseInt(numero1) + Integer.parseInt(numero2));
+                sesion.setAttribute("suma", SumaNum);
+                sesion.setAttribute("primos", primos);
+                response.sendRedirect("suma.jsp");
+
+            } else if (resta != null) {
+                SumaNum = (Integer.parseInt(numero1) - Integer.parseInt(numero2));
+                sesion.setAttribute("resta", SumaNum);
+                sesion.setAttribute("primos", primos);
+                response.sendRedirect("resta.jsp");
+
+            } else if (multiplicacion != null) {
+                SumaNum = (Integer.parseInt(numero1) * Integer.parseInt(numero2));
+                sesion.setAttribute("multiplicacion", SumaNum);
+                sesion.setAttribute("primos", primos);
+                response.sendRedirect("multiplicacion.jsp");
+
+            } else if (divicion != null) {
+                SumaNum = (Integer.parseInt(numero1) / Integer.parseInt(numero2));
+                sesion.setAttribute("divicion", SumaNum);
+                sesion.setAttribute("primos", primos);
+                response.sendRedirect("divicion.jsp");
+            }
             out.println("</body>");
             out.println("</html>");
         }

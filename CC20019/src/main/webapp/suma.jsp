@@ -12,7 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Bienvenido <%out.println(session.getAttribute("nombre"));%></h1>
-        <h2>Suma</h2>       
+        <h1 style="text-align: center; background: black; color: white;">Bienvenido <%out.println(session.getAttribute("nombre"));%></h1>
+        <h2>Sus numeros fueron : primero #<%out.println(session.getAttribute("numero1"));%> segundo #<%out.println(session.getAttribute("numero2"));%></h2>
+        <h2>La suma de sus numeros fueron <%out.println(session.getAttribute("suma"));%></h2>   
+        <h2>Sus numeros primos fueron <%out.println(session.getAttribute("primos"));%></h2>   
     </body>
 </html>
