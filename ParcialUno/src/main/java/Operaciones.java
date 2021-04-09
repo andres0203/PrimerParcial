@@ -51,7 +51,55 @@ public class Operaciones extends HttpServlet {
             out.println("<label>"+request.getParameter("user")+" el resultado de la division es: " + resultado + "</label>");}
             else
             {resultado = Double.parseDouble(request.getParameter("first"))* Double.parseDouble(request.getParameter("second")) ;
-                    out.println("<label>"+request.getParameter("user")+" el resultado de la multiplicacion es: " + resultado + "</label>");}
+                    out.println("<label>"+request.getParameter("user")+" el resultado de la multiplicacion es: " + resultado + "</label>");} 
+            int first=Math.abs(Integer.parseInt(request.getParameter("first"))), second=Math.abs(Integer.parseInt(request.getParameter("second"))), contador, a, b, primos;
+            if (first>second){
+                out.println("<br><br><label>");
+                primos=0;
+                for (a=first;a>=second;a=a-1){
+                    contador=0;
+                    for(b=1;b<=a;b=b+1){
+                        if (a%b==0){
+                            contador=contador+1;
+                        }}
+                    if (contador==2){
+                        out.println("("+a+")");
+                        primos=primos+1;}}
+                if (primos==0){
+                    out.println("No hay numeros primos entre "+first+" y "+second+".</label>");}
+                else if (primos==1){
+                    out.println("  es el numero primo entre "+first+" y "+second+".</label>");}
+                else{
+                    out.println("</label><br><label>Estos son los numeros primos entre "+first+" y "+second+".</label>");}}
+            else if (second>first){
+                out.println("<br><br><label>");
+                primos=0;
+                for (a=second;a>=first;a=a-1){
+                    contador=0;
+                    for(b=1;b<=a;b=b+1){
+                        if (a%b==0){
+                            contador=contador+1;
+                        }}
+                    if (contador==2){
+                        out.println("("+a+")");
+                        primos=primos+1;}}
+                if (primos==0){
+                    out.println("No hay numeros primos entre "+second+" y "+first+".</label>");}
+                else if (primos==1){
+                    out.println("  es el numero primo entre "+second+" y "+first+".</label>");}
+                else{
+                    out.println("</label><br><label>Estos son los numeros primos entre "+second+" y "+first+".</label>");}}
+            else{
+                contador=0;
+                    for(b=1;b<=first;b=b+1){
+                        if (first%b==0){
+                            contador=contador+1;
+                        }}
+                if (contador==2){
+                    out.println("<br><br><label>El numero "+first+" es un numero primo.");}
+                else{
+                    out.println("<br><br><label>El numero "+first+" no es un numero primo.");}}
+                
             out.println("</body>");
             out.println("</html>");
         }
