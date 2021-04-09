@@ -1,7 +1,7 @@
 <%-- 
     Document   : bienvenido
     Created on : 8 abr. 2021, 21:25:36
-    Author     : avi
+    Author     : aviles
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
