@@ -37,7 +37,21 @@ public class Operaciones extends HttpServlet {
             out.println("<title>Servlet Operaciones</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Operaciones at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Bienvenido " + request.getParameter("user") + "</h1>");
+            Double resultado=0.0;
+            String Operacion=request.getParameter("Operacion");
+            if ("+".equals(Operacion))
+            {resultado = Double.parseDouble(request.getParameter("first"))+ Double.parseDouble(request.getParameter("second")) ;
+                    out.println("<label>"+request.getParameter("user")+" el resultado de la suma es: " + resultado + "</label>");}
+            else if ("-".equals(Operacion))
+            {resultado = Double.parseDouble(request.getParameter("first"))- Double.parseDouble(request.getParameter("second")) ;
+                    out.println("<label>"+request.getParameter("user")+" el resultado de la resta es: " + resultado + "</label>");}
+            else if ("/".equals(Operacion))
+            {resultado = Double.parseDouble(request.getParameter("first"))/ Double.parseDouble(request.getParameter("second")) ;
+            out.println("<label>"+request.getParameter("user")+" el resultado de la division es: " + resultado + "</label>");}
+            else
+            {resultado = Double.parseDouble(request.getParameter("first"))* Double.parseDouble(request.getParameter("second")) ;
+                    out.println("<label>"+request.getParameter("user")+" el resultado de la multiplicacion es: " + resultado + "</label>");}
             out.println("</body>");
             out.println("</html>");
         }
