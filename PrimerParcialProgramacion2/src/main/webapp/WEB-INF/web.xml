@@ -4,9 +4,17 @@
         <servlet-name>ServletBienvenida</servlet-name>
         <servlet-class>jonathancastaneda.servlet.ServletBienvenida</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletOperacionArtmetica</servlet-name>
+        <servlet-class>jonathancastaneda.servlet.ServletOperacionArtmetica</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletBienvenida</servlet-name>
         <url-pattern>/ServletBienvenida</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletOperacionArtmetica</servlet-name>
+        <url-pattern>/ServletOperacionArtmetica</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
