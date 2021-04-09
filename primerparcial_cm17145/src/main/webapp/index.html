@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>calculadora</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Calculadora</h1>
+        <form action="ServletCalculadora" method="post">
+            <p>ingrese su Nombre: <input type="text" name="nombres" > </p>
+             
+            <p>ingrese un numero: <input type="text" name="numero1"></p>
+            <p>ingrese un numero: <input type="text" name="numero2"></p>
+            
+            <h3> Seleccione el tipo de operacion deseado</h3>
+            <input type="radio" name="ops" value="1" >sumar
+            <input type="radio" name="ops" value="2">restar
+            <input type="radio" name="ops" value="3">Multiplicar
+            <input type="radio" name="ops" value="4">Dividir 
+            <p> <input type="submit" value="Enviar"></p>
+            
+        </form>
+    </body>
+        
+</html>
