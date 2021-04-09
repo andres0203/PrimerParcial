@@ -22,6 +22,8 @@ public class ServletBienvenida extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    int opcion=0, resultado=0;
+    String operacion="";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -33,19 +35,27 @@ public class ServletBienvenida extends HttpServlet {
             out.println("<title>Bienvenida</title>");            
             out.println("</head>");
             out.println("<body>");
+            opcion=0;
+            operacion="";
+            opcion= Integer.parseInt(request.getParameter("opcion"));
+            if (opcion==1){
+            resultado=Integer.parseInt(request.getParameter("numero1"))+Integer.parseInt(request.getParameter("numero2"));
+            operacion="Suma";
+            }
+            else if(opcion==2){
+            resultado=Integer.parseInt(request.getParameter("numero1"))-Integer.parseInt(request.getParameter("numero2"));
+            operacion="Resta";
+            }
+            else if (opcion==3){
+            resultado=Integer.parseInt(request.getParameter("numero1"))*Integer.parseInt(request.getParameter("numero2"));
+            operacion="Multi´licacion";
+            }
+            else if (opcion==4){
+            resultado=Integer.parseInt(request.getParameter("numero1"))/Integer.parseInt(request.getParameter("numero2"));
+            operacion="Division";
+            }
             out.println("<h1>Bienvenido " + request.getParameter("nombre") + "</h1>");
-            out.println("<p>Elige la operacion aritmetica a realizar con los números "+ request.getParameter("numero1") +" y "+request.getParameter("numero2")+".</p>\n" +
-"        <div>\n" +
-"            <form action=\"ServletOperacionArtmetica\" method=\"post\">\n" +
-"                <select name=\"opcion\">\n" +
-"                    <option value=\"1\">Suma</option> \n" +
-"                    <option value=\"2\">Resta</option>\n" +
-"                    <option value=\"3\">Multiplicación</option>\n" +
-"                    <option value=\"4\">División</option>\n" +
-"                </select>\n" +
-"                <input type=\"submit\" value=\"Enviar opcion\">\n" +
-"            </form>\n" +
-"        </div>");
+            out.println(request.getParameter("nombre")+" el resultado de la "+operacion+" de "+request.getParameter("numero1")+" y "+request.getParameter("numero2")+" es: "+resultado);
             out.println("</body>");
             out.println("</html>");
         }
