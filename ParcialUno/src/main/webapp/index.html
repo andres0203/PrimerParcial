@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Start Page</title>
+        <title>Arithmetic World</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Operaciones Aritmeticas</h1>
+        <br>
+        <form name="Identificacion" action="Operaciones" method="POST">
+            <label>Ingrese su NickName:</label>
+            <input type="text" name="user" id="userid">
+            <br>
+            <label>Primer Numero:</label>
+            <input type="number" name="first" id="firstrid">
+            <br>
+            <label>Segundo Numero:</label>
+            <input type="number" name="second" id="secondrid">
+            <br>
+            <select name="Operacion" size="1" >
+                <option value="+">Suma</option>
+                <option value="-">Resta</option>
+                <option value="/">Division</option>
+                <option value="*">Multiplicacion</option>
+            </select>
+            <br>
+            <input type="submit" value="Operar">
+        </form>
     </body>
 </html>
