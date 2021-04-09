@@ -99,7 +99,6 @@ public class Operaciones extends HttpServlet {
                     out.println("<br><br><label>El numero "+first+" es un numero primo.");}
                 else{
                     out.println("<br><br><label>El numero "+first+" no es un numero primo.");}}
-                
             out.println("</body>");
             out.println("</html>");
         }
