@@ -1,0 +1,72 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 8 abr. 2021, 22:06:32
+    Author     : Usuario
+*/
+
+h1{
+    color:#ffff00;
+    text-shadow:2px 2px #000000;
+    text-align:center;
+    font-size:xx-large
+}
+body{
+
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+ 
+
+}
+
+.contenedor{
+
+    width: 150%;
+    background-color: #F2F5FA;
+    padding: 20px;
+    border: white 5px outset;
+}
+
+.menu{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.texto{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+input[type=text]{
+    width: 70%;
+    border: 2.5px solid #5F93E6;
+    outline: none;
+    padding: .3em;
+    padding-left: .6em;
+    color: #818492;
+    background-color: #D9DFEB;
+
+}
+
+
+
+label{
+    width: 70%;
+    margin-bottom: .2em;
+    font-size: 0.774rem;
+    display: block;
+    color: #5F93E6;
+    font-weight: 500;
+}
