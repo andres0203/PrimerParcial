@@ -22,8 +22,9 @@ public class ServletBienvenida extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    int opcion=0, resultado=0;
-    String operacion="";
+    int opcion = 0, resultado = 0, conteo = 0, mayor = 0, menor = 0,contador=0,numero=0;
+    String operacion = "";
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -32,30 +33,47 @@ public class ServletBienvenida extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Bienvenida</title>");            
+            out.println("<title>Bienvenida</title>");
             out.println("</head>");
             out.println("<body>");
-            opcion=0;
-            operacion="";
-            opcion= Integer.parseInt(request.getParameter("opcion"));
-            if (opcion==1){
-            resultado=Integer.parseInt(request.getParameter("numero1"))+Integer.parseInt(request.getParameter("numero2"));
-            operacion="Suma";
+            opcion = 0;
+            operacion = "";
+            opcion = Integer.parseInt(request.getParameter("opcion"));
+            if (opcion == 1) {
+                resultado = Integer.parseInt(request.getParameter("numero1")) + Integer.parseInt(request.getParameter("numero2"));
+                operacion = "Suma";
+            } else if (opcion == 2) {
+                resultado = Integer.parseInt(request.getParameter("numero1")) - Integer.parseInt(request.getParameter("numero2"));
+                operacion = "Resta";
+            } else if (opcion == 3) {
+                resultado = Integer.parseInt(request.getParameter("numero1")) * Integer.parseInt(request.getParameter("numero2"));
+                operacion = "Multi´licacion";
+            } else if (opcion == 4) {
+                resultado = Integer.parseInt(request.getParameter("numero1")) / Integer.parseInt(request.getParameter("numero2"));
+                operacion = "Division";
             }
-            else if(opcion==2){
-            resultado=Integer.parseInt(request.getParameter("numero1"))-Integer.parseInt(request.getParameter("numero2"));
-            operacion="Resta";
+            if (Integer.parseInt(request.getParameter("numero1")) > Integer.parseInt(request.getParameter("numero2"))) {
+                mayor=Integer.parseInt(request.getParameter("numero1"));
+                menor=Integer.parseInt(request.getParameter("numero2"));
             }
-            else if (opcion==3){
-            resultado=Integer.parseInt(request.getParameter("numero1"))*Integer.parseInt(request.getParameter("numero2"));
-            operacion="Multi´licacion";
-            }
-            else if (opcion==4){
-            resultado=Integer.parseInt(request.getParameter("numero1"))/Integer.parseInt(request.getParameter("numero2"));
-            operacion="Division";
+            else{
+                mayor=Integer.parseInt(request.getParameter("numero2"));
+                menor=Integer.parseInt(request.getParameter("numero1"));
             }
             out.println("<h1>Bienvenido " + request.getParameter("nombre") + "</h1>");
-            out.println(request.getParameter("nombre")+" el resultado de la "+operacion+" de "+request.getParameter("numero1")+" y "+request.getParameter("numero2")+" es: "+resultado);
+            out.println(request.getParameter("nombre") + " el resultado de la " + operacion + " de " + request.getParameter("numero1") + " y " + request.getParameter("numero2") + " es: " + resultado+"<br><br>");
+            out.println("Los numeros primos entre "+menor+" y "+mayor+" son: ");
+            for (numero = mayor; numero > menor; numero--) {
+                contador = 0;
+                for (conteo = 1; conteo <= numero; conteo++) {
+                    if (numero % conteo == 0) {
+                        contador++;
+                    }
+                }
+                if (contador==2){
+                    out.println(numero+", ");
+                }
+            }
             out.println("</body>");
             out.println("</html>");
         }
