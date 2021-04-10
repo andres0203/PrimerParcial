@@ -47,6 +47,8 @@ public class operacion1 extends HttpServlet {
             String suma = request.getParameter("Sumar");
             String resta = request.getParameter("Restar");
             String multi = request.getParameter("Multiplicar");
+            int numerop=0;
+            int segundonum=0;
             int resultado = 0;
             if (suma != null) {
                 resultado = Integer.parseInt(numero1) + Integer.parseInt(numero2);
@@ -55,7 +57,16 @@ public class operacion1 extends HttpServlet {
                 out.println("<div></div>");
                 out.println("Los numeros primos que estan en ese rango son: ");
                 out.println("<div></div>");
-                for (int i1 = resultado; i1 >= 2; i1--) {
+                numerop=Integer.parseInt(numero1);
+                segundonum=Integer.parseInt(numero2);
+                out.println("<div></div>");
+                int numeromayor=0;
+                int numeromenor=0;
+                if (numerop>segundonum) {
+                    //este campo if avarca cuando el primer campo sea el numero mayor y el segundo el numero menor
+                    numeromayor=numerop;
+                    numeromenor=segundonum;
+                    for (int i1 = numeromayor; i1 >= numeromenor; i1--) {
                     out.println("<div></div>");
                     for (int i2 = i1; i2 >= 1; i2--) {
                         if ((i1%i2)==0) {
@@ -68,9 +79,42 @@ public class operacion1 extends HttpServlet {
                     }
                     contador=0;
                 }
-                 if (resultado<0) {
-                out.println("los numeros negativos no tienen primos ");
-            }
+                }else if(segundonum>numerop){
+                    numeromayor=segundonum;
+                    numeromenor=numerop;
+                    for (int i1 = numeromayor; i1 >= numeromenor; i1--) {
+                    out.println("<div></div>");
+                    for (int i2 = i1; i2 >= 1; i2--) {
+                        if ((i1%i2)==0) {
+                            contador=contador+1;
+                            
+                        }
+                    }
+                    if (contador==2) {
+                        out.print(i1);
+                    }
+                    contador=0;
+                }
+                }else if(numerop==segundonum){
+                  for (int i1 = numerop; i1 >= 2; i1--) {
+                    out.println("<div></div>");
+                    for (int i2 = i1; i2 >= 1; i2--) {
+                        if ((i1%i2)==0) {
+                            contador=contador+1;
+                            
+                        }
+                    }
+                    if (contador==2) {
+                        out.print(i1);
+                    }
+                    contador=0;
+                }
+             
+       
+                }
+           
+                
+                
 
             } else if(resta != null) {
                 resultado = Integer.parseInt(numero1) - Integer.parseInt(numero2);
@@ -79,7 +123,15 @@ public class operacion1 extends HttpServlet {
                 out.println("<div></div>");
                 out.println("Los numeros primos que estan en ese rango son: ");
                 out.println("<div></div>");
-                for (int i1 = resultado; i1 >= 2; i1--) {
+                numerop=Integer.parseInt(numero1);
+                segundonum=Integer.parseInt(numero2);
+                out.println("<div></div>");
+                int numeromayor=0;
+                int numeromenor=0;
+                if (numerop>segundonum) {
+                    numeromayor=numerop;
+                    numeromenor=segundonum;
+                    for (int i1 = numeromayor; i1 >= numeromenor; i1--) {
                     out.println("<div></div>");
                     for (int i2 = i1; i2 >= 1; i2--) {
                         if ((i1%i2)==0) {
@@ -92,6 +144,41 @@ public class operacion1 extends HttpServlet {
                     }
                     contador=0;
                 }
+                }else if(segundonum>numerop){
+                    numeromayor=segundonum;
+                    numeromenor=numerop;
+                    for (int i1 = numeromayor; i1 >= numeromenor; i1--) {
+                    out.println("<div></div>");
+                    for (int i2 = i1; i2 >= 1; i2--) {
+                        if ((i1%i2)==0) {
+                            contador=contador+1;
+                            
+                        }
+                    }
+                    if (contador==2) {
+                        out.print(i1);
+                    }
+                    contador=0;
+                }
+                }else if(numerop==segundonum){
+                  for (int i1 = numerop; i1 >= 2; i1--) {
+                    out.println("<div></div>");
+                    for (int i2 = i1; i2 >= 1; i2--) {
+                        if ((i1%i2)==0) {
+                            contador=contador+1;
+                            
+                        }
+                    }
+                    if (contador==2) {
+                        out.print(i1);
+                    }
+                    contador=0;
+                }
+             
+       
+                }
+             
+                  
             }else{
                 resultado = Integer.parseInt(numero1) * Integer.parseInt(numero2);
                 out.println(nombreS+"El resultado de la multiplicacion es " + resultado);
@@ -99,7 +186,16 @@ public class operacion1 extends HttpServlet {
                 out.println("<div></div>");
                 out.println("Los numeros primos que estan en ese rango son: ");
                 out.println("<div></div>");
-                for (int i1 = resultado; i1 >= 2; i1--) {
+                numerop=Integer.parseInt(numero1);
+                segundonum=Integer.parseInt(numero2);
+                out.println("<div></div>");
+                int numeromayor=0;
+                int numeromenor=0;
+                if (numerop>segundonum) {
+                    //este campo if avarca cuando el primer campo sea el numero mayor y el segundo el numero menor
+                    numeromayor=numerop;
+                    numeromenor=segundonum;
+                    for (int i1 = numeromayor; i1 >= numeromenor; i1--) {
                     out.println("<div></div>");
                     for (int i2 = i1; i2 >= 1; i2--) {
                         if ((i1%i2)==0) {
@@ -112,12 +208,43 @@ public class operacion1 extends HttpServlet {
                     }
                     contador=0;
                 }
-                
+                }else if(segundonum>numerop){
+                    numeromayor=segundonum;
+                    numeromenor=numerop;
+                    for (int i1 = numeromayor; i1 >= numeromenor; i1--) {
+                    out.println("<div></div>");
+                    for (int i2 = i1; i2 >= 1; i2--) {
+                        if ((i1%i2)==0) {
+                            contador=contador+1;
+                            
+                        }
+                    }
+                    if (contador==2) {
+                        out.print(i1);
+                    }
+                    contador=0;
+                }
+                }else if(numerop==segundonum){
+                  for (int i1 = numerop; i1 >= 2; i1--) {
+                    out.println("<div></div>");
+                    for (int i2 = i1; i2 >= 1; i2--) {
+                        if ((i1%i2)==0) {
+                            contador=contador+1;
+                            
+                        }
+                    }
+                    if (contador==2) {
+                        out.print(i1);
+                    }
+                    contador=0;
+                }
+             
+       
+                }
+                  
             }
                 
-            if (resultado<0) {
-                out.println("los numeros negativos no tienen primos ");
-            }
+          
             out.println("</body>");
             out.println("</html>");
         }
