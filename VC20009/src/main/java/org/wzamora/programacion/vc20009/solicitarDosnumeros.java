@@ -28,8 +28,9 @@ public class solicitarDosnumeros extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    String nombre, suma, resta, multiplicacion, divicion, verPrimos="";
+    String nombre="", suma, resta, multiplicacion, divicion, verPrimos = "";
     int numero1, numero2, Resultado, numeroMayor, numeroMenor, contador1, contador2;
+
     //codigo
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -59,7 +60,8 @@ public class solicitarDosnumeros extends HttpServlet {
                 numeroMayor = numero2;
                 numeroMenor = numero1;
             }
-            for (contador1 = numeroMenor; contador1 < numeroMayor; contador1++) {
+            verPrimos = "";
+            for (contador1 = numeroMenor; contador1 <= numeroMayor; contador1++) {
                 int conta = 0;
                 for (contador2 = 1; contador2 <= contador1; contador2++) {
                     if ((contador1 % contador2) == 0) {
@@ -67,38 +69,41 @@ public class solicitarDosnumeros extends HttpServlet {
                     }
                 }
                 if (conta == 2) {
-                    verPrimos += contador1 + ",";
+                    verPrimos += contador1 + ",  ";
                 }
             }
-            sesion.setAttribute("nombre", nombre);
+            if (nombre.isEmpty()) {
+                response.sendRedirect("index.html");
+            } else {
+                sesion.setAttribute("nombre",nombre);
+                Resultado = 0;
+                if (suma != null) {
+                    Resultado = numero1 + numero2;
+                    sesion.setAttribute("suma", Resultado);
+                    sesion.setAttribute("verPrimos", verPrimos);
+                    response.sendRedirect("suma.jsp");
 
-            Resultado = 0;
-            if (suma != null) {
-                Resultado = numero1 + numero2;
-                sesion.setAttribute("suma", Resultado);
-                sesion.setAttribute("verPrimos", verPrimos);
-                response.sendRedirect("suma.jsp");
+                } else if (resta != null) {
+                    Resultado = numero1 - numero2;
+                    sesion.setAttribute("resta", Resultado);
+                    sesion.setAttribute("verPrimos", verPrimos);
+                    response.sendRedirect("resta.jsp");
 
-            } else if (resta != null) {
-                Resultado = numero1 - numero2;
-                sesion.setAttribute("resta", Resultado);
-                sesion.setAttribute("verPrimos", verPrimos);
-                response.sendRedirect("resta.jsp");
-
-            } else if (multiplicacion != null) {
-                Resultado = numero1 * numero2;
-                sesion.setAttribute("multiplicacion", Resultado);
-                sesion.setAttribute("verPrimos", verPrimos);
-                response.sendRedirect("multiplicar.jsp");
-            } else if (divicion != null) {
-                Resultado = numero1 / numero2;
-                sesion.setAttribute("dividir", Resultado);
-                sesion.setAttribute("verPrimos", verPrimos);
-                response.sendRedirect("dividir.jsp");
+                } else if (multiplicacion != null) {
+                    Resultado = numero1 * numero2;
+                    sesion.setAttribute("multiplicacion", Resultado);
+                    sesion.setAttribute("verPrimos", verPrimos);
+                    response.sendRedirect("multiplicar.jsp");
+                } else if (divicion != null) {
+                    Resultado = numero1 / numero2;
+                    sesion.setAttribute("dividir", Resultado);
+                    sesion.setAttribute("verPrimos", verPrimos);
+                    response.sendRedirect("dividir.jsp");
+                }
+                out.println("<big><h1>Bienvenido:" + "</h1></big>");
+                out.println("</body>");
+                out.println("</html>");
             }
-            out.println("<big><h1>Bienvenido:" + "</h1></big>");
-            out.println("</body>");
-            out.println("</html>");
         }
     }
 

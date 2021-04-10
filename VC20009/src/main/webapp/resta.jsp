@@ -11,9 +11,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
-        <h1 style="background: black; color: white; text-align:center ">Usuario: <% out.println(session.getAttribute("nombre"));%></h1>
-        <h3>la resta de sus dos numeros es: <% out.println(session.getAttribute("resta"));%></h3>
-        <h3>los numeros primos son: <% out.println(session.getAttribute("verPrimos"));%></h3>
+    <body style="background:grey">
+        <h1 style="background: black; color: white; text-align:center;border-radius: 3px;font-family: arial;font-size: 35px">USUARIO: <% out.println(session.getAttribute("nombre"));%></h1>
+        <h2>La resta de sus dos numeros es: <% out.println(session.getAttribute("resta"));%></h2>
+        <h2>Los numeros primos son: <% out.println(session.getAttribute("verPrimos"));%></h2>
     </body>
 </html>
